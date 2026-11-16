@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import art.timestop.todos.dto.RegisterDto;
+import art.timestop.todos.dto.request.RegisterDto;
 import art.timestop.todos.entities.Authority;
 import art.timestop.todos.entities.User;
 import art.timestop.todos.enums.Role;

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import art.timestop.todos.dto.RegisterDto;
+import art.timestop.todos.dto.request.RegisterDto;
 import art.timestop.todos.service.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.RequestBody;

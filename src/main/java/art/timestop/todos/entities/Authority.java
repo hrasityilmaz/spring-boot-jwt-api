@@ -9,32 +9,24 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
-@Embeddable 
+@Embeddable
 public class Authority implements GrantedAuthority {
-
-    private String authority;
 
     @Enumerated(EnumType.STRING)
     private Role role;
 
     public Authority() {}
 
-    
-    public Authority(String authority, Role role) {
-        this.authority = authority;
+    public Authority(Role role) {
         this.role = role;
     }
 
-
     @Override
-    public @Nullable String getAuthority() {
-       return null;
+    public String getAuthority() {
+        return role.name();
     }
-
 
     public Role getRole() {
         return role;
     }
-
-    
 }

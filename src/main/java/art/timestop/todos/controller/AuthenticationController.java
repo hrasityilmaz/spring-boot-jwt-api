@@ -6,18 +6,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import art.timestop.todos.dto.request.LoginRequestDto;
 import art.timestop.todos.dto.request.RegisterDto;
+import art.timestop.todos.dto.response.LoginResponseDto;
 import art.timestop.todos.service.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
-@RestController 
+@RestController
 @RequestMapping ("/api/auth")
 @Tag (name = "Authentication REST API Endpoints", description = "Register and Login operations")
 public class AuthenticationController {
-    
+
     private final AuthenticationService authenticationService;
 
     public AuthenticationController(AuthenticationService authenticationService) {
@@ -29,5 +31,12 @@ public class AuthenticationController {
     @PostMapping ("/register")
     public void register(@Valid @RequestBody RegisterDto registerDto) throws Exception {
         authenticationService.register(registerDto);
+    }
+
+    @Operation(summary = "Login a user")
+    @ResponseStatus (HttpStatus.OK)
+    @PostMapping ("/login")
+    public LoginResponseDto login(@Valid @RequestBody LoginRequestDto loginRequest){
+        return authenticationService.login(loginRequest);
     }
 }

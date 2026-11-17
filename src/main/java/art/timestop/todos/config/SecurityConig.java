@@ -67,7 +67,9 @@ public class SecurityConig {
                     "/swagger-resources/**",
                     "/webjars/**",
                     "/docs"
-                ).permitAll());
+                ).permitAll()
+                .anyRequest().authenticated()
+            );
 
         http.csrf(csrf -> csrf.disable());
 

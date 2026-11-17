@@ -1,4 +1,4 @@
-A *RESTful User Management* built with Java 21 and Spring Boot 4.1.2, featuring JWT-based authentication, user management, and secure API endpoints.
+A *RESTful User Management* built with Java 21 and Spring Boot 4.1.2, featuring JWT-based authentication with MySQL, user management, and secure API endpoints.
 
 ![Swagger UI](swagger.png)
 
@@ -10,9 +10,9 @@ User Registration – Register new users.
 
 User Login – Authenticate users and generate JWT tokens.
 
-User Management – Retrieve, update, and 
+Database suppoer - Mysql 
 
-delete user accounts.
+User Management – Retrieve, update, and  delete user accounts.
 
 Password Management – Secure password updates.
 

@@ -62,6 +62,7 @@ public class SecurityConig {
             configurer.
                 requestMatchers(
                     "/api/auth/**",
+                    "/api/user/**",
                     "/swagger-ui/**",
                     "/v3/api-docs/**",
                     "/swagger-resources/**",
